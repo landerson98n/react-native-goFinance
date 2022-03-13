@@ -1,18 +1,19 @@
 import styled from 'styled-components/native'
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize'
 import { Feather } from '@expo/vector-icons'
-
+import { BorderlessButton } from 'react-native-gesture-handler'
 export const Container = styled.View`
    flex: 1;
    background-color:${({theme}) => theme.colors.background};
 `
 export const Header = styled.View`
    width: 100% ;
-   height: ${RFPercentage(42)}px ;
+   height: ${RFPercentage(40)}px ;
    background-color: ${({theme}) => theme.colors.primary} ;
-   justify-content: center ;
-   align-items: center ;
+   justify-content: center;
+   align-items: flex-start ;
    flex-direction: row ;
+   padding-top: 40px ;
 `
 export const Photo = styled.Image`
    width:${RFValue(48)}px;
@@ -44,7 +45,9 @@ export const UserWrapper = styled.View`
    justify-content: space-between ;
    align-items: center ;
 `;
+export const LogoutButton = styled(BorderlessButton)`
 
+`
 export const Icon = styled(Feather)`
    color: ${({theme})=>theme.colors.secondary};
    font-size: ${RFValue(24)} ;
@@ -59,14 +62,14 @@ export const HighLightCards = styled.ScrollView.attrs(
 )`
    width: 100%;
    position: absolute;
-   margin-top: ${RFPercentage(30)}px ;
+   margin-top: ${RFPercentage(20)}px ;
 
 `
 
 export const Transactions = styled.View`
    flex: 1%;
    padding:0 24px ;
-   margin-top: ${RFPercentage(20)}px ;
+   margin-top: ${RFPercentage(12)}px ;
 `
 export const Title = styled.Text`
    font-size: ${RFValue(18)}px ;
@@ -74,6 +77,16 @@ export const Title = styled.Text`
    margin-bottom: 16px ;
 `
 
-export const TransactionsList = styled.FlatList`
+export const TransactionsList = styled.FlatList.attrs(
+   {
+      
+   }
+)``
+
+export const LoadContainer = styled.View`
+   flex: 1;
+   justify-content: center ;
+   align-items: center ;
 
 `
+
